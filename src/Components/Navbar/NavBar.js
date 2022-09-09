@@ -4,7 +4,8 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import {} from '@mui/icons-material/AddShoppingCart';
 import Logo from "../../assets/commerce.png";
 import useStyles from "./styles"
-const NavBar = () => {
+const NavBar = ({carttotal}) => {
+    console.log(carttotal)
     const classes=useStyles();
   return (
     <>
@@ -16,7 +17,7 @@ const NavBar = () => {
                 <div className={classes.grow}></div>
                 <div className={classes.button}>
                     <IconButton aria-label="show cart items" color="inherit">
-                        <Badge badgeContent={2} color="secondary">
+                        <Badge badgeContent={carttotal} color="secondary">
                             <AddShoppingCartIcon></AddShoppingCartIcon>
                         </Badge>
                     </IconButton>
